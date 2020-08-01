@@ -1,10 +1,11 @@
 import scrapy
 from scrapy.selector import Selector
 import pandas as pd
-import pymongo
-myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-mydb = myclient["dress_search_engine"]
-mycol = mydb["data"]
+#import pymongo
+#myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+#mydb = myclient["dress_search_engine"]
+#mycol = mydb["data"]
+
 
 class QuotesSpider(scrapy.Spider):
     name = "flipkart"
@@ -26,8 +27,8 @@ class QuotesSpider(scrapy.Spider):
                 '._3togXc::attr(src)').extract_first()
             insert_status = mycol.insert_one(
                 {'name': name, 'price': price, 'product_link': product_link, 'image': product_image, 'company': 'Flipkart', 'type': 'tshirt'})
-            
-            #code for creating csv
+
+            # code for creating csv
         #     item_data.append([name, price, product_link, product_image])
         # if len(item_data):
         #     df = pd.DataFrame(item_data, columns=[
