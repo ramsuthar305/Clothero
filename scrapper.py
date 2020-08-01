@@ -20,4 +20,10 @@ def myntra_scrapper(list_of_items):
     browser.close()
 
 
-myntra_scrapper(lof)
+# myntra_scrapper(lof)
+
+def amazon_scrapper():
+    BASE_URL = 'https://www.amazon.in/gp/browse.html?node=1968120031&ref_=nav_em_sbc_mfashion_tshirts_0_2_9_3'
+
+
+

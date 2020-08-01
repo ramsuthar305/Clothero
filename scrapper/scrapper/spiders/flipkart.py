@@ -2,9 +2,9 @@ import scrapy
 from scrapy.selector import Selector
 import pandas as pd
 import pymongo
-myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-mydb = myclient["dress_search_engine"]
-mycol = mydb["data"]
+myclient = pymongo.MongoClient("mongodb+srv://Cl0ther0:Cl0ther0@cluster0.09b0u.mongodb.net/dresses?retryWrites=true&w=majority")
+mydb = myclient["dresses"]
+mycol = mydb["tshirts"]
 
 class QuotesSpider(scrapy.Spider):
     name = "flipkart"
@@ -22,8 +22,8 @@ class QuotesSpider(scrapy.Spider):
             price = Selector(text=str(i)).css('._1vC4OE::text').get()
             product_link = 'https://www.flipkart.com' + \
                 Selector(text=i).css('._2mylT6::attr(href)').extract_first()
-            product_image = Selector(text=str(i)).css(
-                '._3togXc::attr(src)').extract_first()
+            product_image = Selector(text=str(i)).css('._3togXc::attr(src)').extract_first()
+            print('Image: ',product_image)
             insert_status = mycol.insert_one(
                 {'name': name, 'price': price, 'product_link': product_link, 'image': product_image, 'company': 'Flipkart', 'type': 'tshirt'})
             

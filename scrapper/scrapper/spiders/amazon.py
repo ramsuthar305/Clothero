@@ -2,9 +2,9 @@ import scrapy
 from scrapy.selector import Selector
 import pandas as pd
 import pymongo
-myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-mydb = myclient["dress_search_engine"]
-mycol = mydb["data"]
+myclient = pymongo.MongoClient('mongodb://localhost:27017')#("mongodb+srv://Cl0ther0:Cl0ther0@cluster0.09b0u.mongodb.net/dresses?retryWrites=true&w=majority")
+mydb = myclient["dresses"]
+mycol = mydb["tshirts"]
 
 
 class QuotesSpider(scrapy.Spider):
