@@ -1,4 +1,7 @@
 # Clothero
+
+![alt text](https://github.com/ramsuthar305/Clothero/blob/master/Capture.JPG?raw=true)
+
 * ### Introduction
     *  Web-based Image cloth recommendation for both man and woman using transfer learning and statistics like Cosine and Pearson similarity metrics. The basic idea behind the recommendation system is passing image data through a Pre-trained model [Mobilenet_v2] for extracting feature vector which is flattened out in the end. The output from this goes through a comparison metric called cosine similarity metric which is computed between users choice of cloth and the database vectors, scrapped from amazon.in
 
