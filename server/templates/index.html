@@ -29,8 +29,6 @@
                         <li class="is-active"><span>Home</span></li>
                         <li><span>Gender</span></li>
                         <li><span>Apparel</span></li>
-
-                        <li><span>Hire us</span></li>
                     </ul>
                 </nav>
                 <ul class="l-main-content main-content" id="mySections">
@@ -139,12 +137,7 @@
                         </div>
 
                     </li> -->
-                    <li class="l-section section">
-                        <div class="hire">
-                            <h2>You want us to do</h2>
-
-                        </div>
-                    </li>
+                    
                 </ul>
             </div>
         </div>
@@ -153,7 +146,7 @@
         <li class="is-active">Home</li><br>
         <li>Gender</li><br>
         <li>Apparel</li><br>
-        <li>Hire us</li>
+        
     </ul>
 </div>
 
@@ -227,6 +220,7 @@
                         <div class="contact">
                             <div class="contact--lockup">
                                 <div class="row" id="pickYourChoice">
+                                <h2>Pick your choice</h2>
 
                                 </div>
 
@@ -271,14 +265,14 @@
         $.ajax({
             url: '/match',
             type: 'POST',
-            data: JSON.stringify(elementIds),
+            data: JSON.stringify({ 'elemIds': elementIds, 'type': data['apparelType'] }),
             success: function (response) {
                 $('#innerNav li:eq(3)').after('<li><span>Match</span></li>');
                 $('#outerNav li:eq(3)').after('<br/><li>Match</li><br>');
                 $('#mySections li:eq(3)').after(`<li class="l-section section" id="matchSection">
                         <div class="contact">
                             <div class="contact--lockup">
-                                <h2 style="text-align: left; ">T-shirts that matches your choice</h2>
+                                <h2 style="text-align: left; ">${data['apparelType'].toUpperCase()} that matches your choice</h2>
                                 <div class="row" id="matches" style="overflow-y: scroll;height:80vh;">
                                     
                                 </div>
@@ -288,18 +282,22 @@
 
                     </li>`);
 
-                for (var i = 0; i < 30; i++) {
+                for (var i = 0; i < response.length; i++) {
                     $('#matches').append(`<div class="col-md-3">
-                        <img src="https://www.mydesignation.com/wp-content/uploads/2019/03/shammi-tshirt-image-unisex-mydesignation-.jpg"
+                    <a href="${response[i]['Link']}" style="text-decoration:none;color:white">
+                        <img src="${response[i]['Image']}"
                             height="200px" alt="">
+                            <h3>${response[i]['Product']}</h3>
+                            <h3 style="padding-top:0;margin-top:0">₹ ${response[i]['Price']}</h3>
+                            </a>
                     </div>`)
                 }
                 //document.write(response);
                 //$('#pickYourChoice').html(responseDiv);
                 var curActive = $('.side-nav').find('.is-active')
                 curPos = $('.side-nav').children().index(curActive),
-                lastItem = curPos + 1,
-                nextPos = lastItem;
+                    lastItem = curPos + 1,
+                    nextPos = lastItem;
                 updateNavs(lastItem);
                 updateContent(curPos, nextPos, lastItem);
                 console.log('active ' + lastItem);
