@@ -50,7 +50,7 @@
         * for Ubuntu users
             > cd server
             
-            > python3 app.py
+            > flask run
 
 
 
