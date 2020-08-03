@@ -1,13 +1,12 @@
 # Clothero
 
 ![alt text](https://github.com/ramsuthar305/Clothero/blob/master/Capture.JPG?raw=true)
-
-* ### Introduction
+* ## Introduction
     *  Web-based Image cloth recommendation for both man and woman using transfer learning and statistics like Cosine and Pearson similarity metrics. The basic idea behind the recommendation system is passing image data through a Pre-trained model [Mobilenet_v2] for extracting feature vector which is flattened out in the end. The output from this goes through a comparison metric called cosine similarity metric which is computed between users choice of cloth and the database vectors, scrapped from amazon.in
 
-* ### Pre-requisites
+* ## Pre-requisites
     1. Transfer Learning
-         here we have used pre-trained model for feature extractor ,particularly 
+         here we have used pre-trained model for feature extractor ,particularly
     2. Statistics
         Basic knowledge about similarity metrics like Cosine , Pearson
     3. Web-scrapping
@@ -16,9 +15,9 @@
         Baiscs of CSS, HTML, JAVASCRIPT , Flask ,JQuery
     5. Database
         No-sql database like Mongodb
-    
-* ### Intallation requirements
-    1. Python
+   
+* ## Installation requirements
+    1. Python3
         * numpy
         * tensorflow
         * pandas
@@ -34,27 +33,28 @@
         * HTML
         * JAVASCRIPT
         * JQuery
-* ### Intallation 
+* ## Intallation
     1. Clone the repository
-    
-    2. Install the requirements
+    2. Install mongodb
+    3. Preprocess data i.e create vectors of images path with the help of `Clothero.ipynb` in the root directory and sample data csv for preprocessing can be found in `img-databse` folder.
+    4. Import processed csv file in your mongodb database
+    5. Install the requirements
         * for Windows users
             > pip install -r requirements.txt
 
         * for Ubuntu users
             > pip3 install -r requirements.txt
-            
-    3. Start the server
-        * for Windows users
-            > cd server
-            
-            > python app.py
-        
-        * for Ubuntu users
-            > cd server
-            
-            > flask run
+           
+    6. Start the server
+      `cd server`
+      `flask run`
 
+* ## Reach us
 
+* Ram Suthar
+[LinkedIn](https://www.linkedin.com/in/ramsuthar305/) | [Github](https://github.com/ramsuthar305)
+
+* Krish Shah
+[LinkedIn](https://www.linkedin.com/mwlite/in/krish-shah-20542817b) | [Github](https://github.com/krishshah99615)
 
     
