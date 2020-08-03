@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Global</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Clothero shopping assistance">
+  <meta name="keywords" content="assistance, shopping">
+  <meta name="author" content="Ram Suthar">
+
+  <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+  <!-- Bootstrap CSS -->
+
+  <style>
+    {% block css %}
+
+      {% endblock %}
+  </style>
+
+</head>
+
+<body>
+  <div>
+    {% block main_page %}
+
+    {% endblock %}
+  </div>
+
+
+    {% block js %}
+    {% endblock %}
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="{{ url_for('static', filename='js/vendor/jquery-2.2.4.min.js')}}"><\/script>')</script>
+  <script src="{{url_for('static', filename='js/functions-min.js')}}"></script>
+</body>
+
+</html>

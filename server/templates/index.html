@@ -1,0 +1,311 @@
+{% extends 'base.html' %}
+{% block main_page %}
+<!-- notification for small viewports and landscape oriented smartphones -->
+<div class="device-notification">
+    <a class="device-notification--logo" href="#0">
+        <img src="{{url_for('static', filename='img/logo.png')}}" alt="Global">
+        <p>Clothero</p>
+    </a>
+    <p class="device-notification--message">Clothero, your new shopping partner. No more scrolling!</p>
+</div>
+
+<div class="perspective effect-rotate-left">
+    <div class="container">
+        <div class="outer-nav--return"></div>
+        <div id="viewport" class="l-viewport">
+            <div class="l-wrapper">
+                <header class="header">
+                    <a class="header--logo" href="#0">
+                        <img src="{{url_for('static', filename='img/logo.png')}}" alt="Global">
+                        <p>Clothero</p>
+                    </a>
+                    <button class="header--cta cta">Hire Us</button>
+                    <div class="header--nav-toggle">
+                        <span></span>
+                    </div>
+                </header>
+                <nav class="l-side-nav">
+                    <ul class="side-nav" id="innerNav">
+                        <li class="is-active"><span>Home</span></li>
+                        <li><span>Gender</span></li>
+                        <li><span>Apparel</span></li>
+
+                        <li><span>Hire us</span></li>
+                    </ul>
+                </nav>
+                <ul class="l-main-content main-content" id="mySections">
+                    <li class="l-section section section--is-active">
+                        <div class="intro">
+                            <div class="intro--banner">
+                                <h1>Clothero<br>Your new <br>shopping <br> partner!</h1>
+                                <button class="cta">Get Started
+                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118"
+                                        style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                                        <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                                            <path
+                                                d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z" />
+                                        </g>
+                                    </svg>
+                                    <span class="btn-background"></span>
+                                </button>
+                                <img src="{{url_for('static', filename='img/main.jpg')}}" style="width: 400px;"
+                                    alt="Welcome">
+                            </div>
+                            <div class="intro--options">
+                                <a href="#0">
+                                    <h3>Easy &amp; Efficient</h3>
+                                    <p>Get your favourite clothing in just two steps.</p>
+                                </a>
+                                <a href="#0">
+                                    <h3>Great AI</h3>
+                                    <p>Our cute Artificial Intelligence automatically grab some great clothes that
+                                        matches you.</p>
+                                </a>
+                                <a href="#0">
+                                    <h3>No more scrolling</h3>
+                                    <p>Say no more to scrolling on different ecommerece sites to search for matching
+                                        clothes.</p>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="l-section section">
+                        <div class="work">
+                            <div style="padding-left: 10%;">
+
+                                <h2 style="text-align: left; ">Who are you?</h2>
+                            </div>
+                            <div class="work--lockup">
+                                <div class="row m-auto">
+                                    <div class=" col-md-4 m-auto">
+                                        <div class="gender" id="male">
+                                            <div class="slider--item-image">
+                                                <img src="{{url_for('static', filename='img/male.jpg')}}" alt="Victory">
+                                            </div>
+                                            <p class="text-center" style="text-transform: uppercase; color:white;">He
+                                            </p>
+
+                                        </div>
+                                    </div>
+
+                                    <div class=" col-md-4 m-auto">
+                                        <div id="female" class="gender">
+                                            <div class="slider--item-image">
+                                                <img src="{{url_for('static', filename='img/female.jpg')}}"
+                                                    alt="Alex Nowak">
+                                            </div>
+                                            <p class="text-center" style="text-transform: uppercase; color:white;">She
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="l-section section">
+                        <div class="about">
+                            <div class="about--banner">
+                                <h2>What are<br>you looking<br>for?</h2>
+
+                                <img src="{{url_for('static', filename='img/about-visual')}}.png" alt="About Us">
+                            </div>
+                            <div class="about--options">
+                                <a id="Tshirt" onclick="getPicker(this.id)">
+                                    <h3>T-shirts</h3>
+                                </a>
+                                <a id="Jeans" onclick="getPicker(this.id)">
+                                    <h3>Jeans</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- <li class="l-section section" id="choose">
+                        <div class="contact">
+                            <div class="contact--lockup">
+                                <div class="row" id="pickYourChoice">
+
+                                </div>
+
+                                <div class="row">
+
+                                    <a onclick="getSelectedPics()"
+                                        style="text-transform: uppercase; font-size: 40px; text-decoration: none; color: white;">Go</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li> -->
+                    <li class="l-section section">
+                        <div class="hire">
+                            <h2>You want us to do</h2>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <ul class="outer-nav" id="outerNav">
+        <li class="is-active">Home</li><br>
+        <li>Gender</li><br>
+        <li>Apparel</li><br>
+        <li>Hire us</li>
+    </ul>
+</div>
+
+
+{% endblock %}
+
+{% block js %}
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+    var data = { 'gender': '', 'apparelType': '' };
+    //new_freq = $('#input').val() //value I want to send 
+    $(".gender").click(function () {
+        data['gender'] = $(this).attr('id');
+        console.log('djkfhdsjk')
+        var curActive = $('.side-nav').find('.is-active'),
+            curPos = $('.side-nav').children().index(curActive),
+            lastItem = 2,
+            nextPos = lastItem;
+        updateNavs(lastItem);
+        updateContent(curPos, nextPos, lastItem);
+    });
+    function updateNavs(nextPos) {
+
+        $('.side-nav, .outer-nav').children().removeClass('is-active');
+        $('.side-nav').children().eq(nextPos).addClass('is-active');
+        $('.outer-nav').children().eq(nextPos).addClass('is-active');
+
+    }
+
+    // update main content area
+    function updateContent(curPos, nextPos, lastItem) {
+
+        $('.main-content').children().removeClass('section--is-active');
+        $('.main-content').children().eq(nextPos).addClass('section--is-active');
+        $('.main-content .section').children().removeClass('section--next section--prev');
+
+        if (curPos === lastItem && nextPos === 0 || curPos === 0 && nextPos === lastItem) {
+            $('.main-content .section').children().removeClass('section--next section--prev');
+        }
+        else if (curPos < nextPos) {
+            $('.main-content').children().eq(curPos).children().addClass('section--next');
+        }
+        else {
+            $('.main-content').children().eq(curPos).children().addClass('section--prev');
+        }
+
+        if (nextPos !== 0 && nextPos !== lastItem) {
+            $('.header--cta').addClass('is-active');
+        }
+        else {
+            $('.header--cta').removeClass('is-active');
+        }
+
+    }
+
+    function getPicker(apparelType) {
+        console.log('clicked :' + apparelType);
+        data['apparelType'] = apparelType;
+        console.log(data);
+        $.ajax({
+            url: '/get_pickers',
+            type: 'POST',
+            data: JSON.stringify(data),
+            success: function (response) {
+                //alert(JSON.parse(response));
+                var responseDiv = '';
+                response = JSON.parse(response);
+                console.log(response);
+                $('#mySections li:eq(2)').after(`<li class="l-section section" id="choose">
+                        <div class="contact">
+                            <div class="contact--lockup">
+                                <div class="row" id="pickYourChoice">
+
+                                </div>
+
+                                <div class="row">
+
+                                    <a onclick="getSelectedPics()"
+                                        style="text-transform: uppercase; font-size: 40px; text-decoration: none; color: white;">Go</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>`);
+
+                $('#innerNav li:eq(2)').after('<li><span>Picks</span></li>');
+                $('#outerNav li:eq(2)').after('<br><li>Picks</li>');
+                for (var i = 0; i < response.length; i++) {
+                    $('#pickYourChoice').append(`<div class="col-md-3">\
+                                        <input type="checkbox" name="picks" class="checkboxPicks" id="${response[i]['_id']}" />\
+                                        <label for="${response[i]['_id']}">\
+                                            <img src="${response[i]['BS4']}" width="150px" alt=""></label>\
+                                    </div>`)
+                }
+                var curActive = $('.side-nav').find('.is-active'),
+                    curPos = $('.side-nav').children().index(curActive),
+                    lastItem = curPos + 1,
+                    nextPos = lastItem;
+                updateNavs(lastItem);
+                updateContent(curPos, nextPos, lastItem);
+                //$('#pickYourChoice').html(responseDiv);
+            }
+        })
+    }
+
+    function getSelectedPics() {
+        var elementIds = [];
+        console.log($(".checkboxPicks:checked"));
+        $(".checkboxPicks:checked").each(function () {
+            console.log($(this).val())
+            elementIds.push($(this).attr('id'));
+        });
+        console.log(elementIds);
+        $.ajax({
+            url: '/match',
+            type: 'POST',
+            data: JSON.stringify(elementIds),
+            success: function (response) {
+                $('#innerNav li:eq(3)').after('<li><span>Match</span></li>');
+                $('#outerNav li:eq(3)').after('<br/><li>Match</li><br>');
+                $('#mySections li:eq(3)').after(`<li class="l-section section" id="matchSection">
+                        <div class="contact">
+                            <div class="contact--lockup">
+                                <h2 style="text-align: left; ">T-shirts that matches your choice</h2>
+                                <div class="row" id="matches" style="overflow-y: scroll;height:80vh;">
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </li>`);
+
+                for (var i = 0; i < 30; i++) {
+                    $('#matches').append(`<div class="col-md-3">
+                        <img src="https://www.mydesignation.com/wp-content/uploads/2019/03/shammi-tshirt-image-unisex-mydesignation-.jpg"
+                            height="200px" alt="">
+                    </div>`)
+                }
+                //document.write(response);
+                //$('#pickYourChoice').html(responseDiv);
+                var curActive = $('.side-nav').find('.is-active')
+                curPos = $('.side-nav').children().index(curActive),
+                lastItem = curPos + 1,
+                nextPos = lastItem;
+                updateNavs(lastItem);
+                updateContent(curPos, nextPos, lastItem);
+                console.log('active ' + lastItem);
+            }
+        })
+    }
+
+</script>
+{% endblock %}
