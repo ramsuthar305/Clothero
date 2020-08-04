@@ -1,6 +1,6 @@
 # Clothero
 
-![alt text](https://github.com/ramsuthar305/Clothero/blob/master/ezgif.com-video-to-gif.gif?raw=true)
++<img src="https://github.com/ramsuthar305/Clothero/blob/master/ezgif.com-video-to-gif.gif?raw=true" width="800px" style="margin-auto">
 * ## Introduction
     *  AI-based shopping assistance for both man and woman using transfer learning and statistics like Cosine and Pearson similarity metrics. The basic idea behind the project is passing image data through a Pre-trained model [Mobilenet_v2] for extracting feature vector which is flattened out in the end. The output from this goes through a comparison metric called cosine similarity metric which is computed between users choice of cloth and the database vectors, scrapped from amazon.in
 
