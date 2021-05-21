@@ -48,7 +48,7 @@ Scrapy==2.2.1
 service-identity==18.1.0
 six==1.15.0
 tensorboard==2.0.2
-tensorflow==2.0.0
+tensorflow==2.5.0
 tensorflow-estimator==2.0.1
 termcolor==1.1.0
 Twisted==20.3.0
