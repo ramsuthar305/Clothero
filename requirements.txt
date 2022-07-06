@@ -22,7 +22,7 @@ incremental==17.5.0
 itemadapter==0.1.0
 Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.2
-lxml==4.5.2
+lxml==4.9.1
 Markdown==3.2.2
 numpy==1.19.1
 oauthlib==3.1.0
